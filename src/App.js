@@ -20,8 +20,34 @@ function TestComp2({hobby}){
 
 return <p>My hobby is {hobby}</p>;
 }
-
-
+//object의 list 가져오기
+const foodILike=[
+  {
+    name:"a",
+    context:"aaaa"
+  },
+  {
+    name:"b",
+    context:"bbbb"
+  },
+  {
+    name:"c",
+    context:"cccc"
+  },
+  {
+    name:"d",
+    context:"dddddddd"
+  },
+  {
+    name:"e",
+    context:"eeeeeeee"
+  },
+  {
+    name:"f",
+    context:"ffffff"
+  }
+];
+//JS의 map 이용-> map = array의 각 item에서 functiond을 실행하는 array를 가질 수 있는 JS function. test/map.js파일 참고
 
 function App() {
   return (
