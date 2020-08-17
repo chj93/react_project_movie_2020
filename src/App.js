@@ -20,34 +20,46 @@ function TestComp2({hobby}){
 
 return <p>My hobby is {hobby}</p>;
 }
+
 //object의 list 가져오기
+//JS의 map 이용-> map = array의 각 item에서 functiond을 실행하는 array를 가질 수 있는 JS function(랜더링). test/map.js파일 참고
+
+function Food({name,picture}){
+return <div>
+        <p>I like {name}<br /></p>
+        <img src={picture}/>
+      </div>;
+}
+
 const foodILike=[
   {
-    name:"a",
-    context:"aaaa"
+    name: "Kimchi",
+    image:
+      "http://aeriskitchen.com/wp-content/uploads/2008/09/kimchi_bokkeumbap_02-.jpg"
   },
   {
-    name:"b",
-    context:"bbbb"
+    name: "Samgyeopsal",
+    image:
+      "https://3.bp.blogspot.com/-hKwIBxIVcQw/WfsewX3fhJI/AAAAAAAAALk/yHxnxFXcfx4ZKSfHS_RQNKjw3bAC03AnACLcBGAs/s400/DSC07624.jpg"
   },
   {
-    name:"c",
-    context:"cccc"
+    name: "Bibimbap",
+    image:
+      "http://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/recipes/ck/12/03/bibimbop-ck-x.jpg?itok=RoXlp6Xb"
   },
   {
-    name:"d",
-    context:"dddddddd"
+    name: "Doncasu",
+    image:
+      "https://s3-media3.fl.yelpcdn.com/bphoto/7F9eTTQ_yxaWIRytAu5feA/ls.jpg"
   },
   {
-    name:"e",
-    context:"eeeeeeee"
-  },
-  {
-    name:"f",
-    context:"ffffff"
+    name: "Kimbap",
+    image:
+      "http://cdn2.koreanbapsang.com/wp-content/uploads/2012/05/DSC_1238r-e1454170512295.jpg"
   }
 ];
-//JS의 map 이용-> map = array의 각 item에서 functiond을 실행하는 array를 가질 수 있는 JS function. test/map.js파일 참고
+
+
 
 function App() {
   return (
@@ -60,6 +72,9 @@ function App() {
       <TestComp2 hobby="Ex1"/>
       <TestComp2 hobby="Ex2"/>
       <TestComp2 hobby="Ex3"/>
+      <h3>object의 list 가져오기</h3>
+      {/*대괄호안에 있는 text는 JS로 인식. dish===object. foodILike 배열속 각각의 값들을 dish로 받음 */}
+      {foodILike.map(dish=><Food name={dish.name} picture={dish.image}/>)}
 
     </div>
   );
